@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">NicollPeruOperarios</string>
+    <string name="titulo_empresa">Nicoll Peru</string>
+    <string name="codigo_de_tubo">Código de tubo:</string>
+    <string name="codigo_de_tubo_hint">Ej: 123456</string>
+    <string name="nombre_completo">Nombre completo</string>
+    <string name="num_maquina">8</string>
+    <string name="observaciones">Observaciones:</string>
+    <string name="turno_default">A</string>
+    <string name="aceptar">Aceptar</string>
+</resources>
