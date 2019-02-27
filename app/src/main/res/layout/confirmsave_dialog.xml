@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="330dp"
+    android:layout_height="320dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/custom_popup"
+    android:layout_gravity="center">
+
+    <RelativeLayout
+        android:id="@+id/data_header"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:textColor="@color/colorPrimaryTextLight"
+            android:text="DATOS GUARDADOS"/>
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="15dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_check_white_24dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/data_body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/data_header"
+        android:layout_above="@+id/data_footer"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+
+        <TextView
+            android:id="@+id/msg_cGuardado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="@string/hora_de_guardado"/>
+
+        <TextView
+            android:id="@+id/msg_cHoraGuardado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/msg_cGuardado"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/msg_cProxima"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/msg_cHoraGuardado"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="@string/proximo_guardado"/>
+
+        <TextView
+            android:id="@+id/msg_cProximaHora"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/msg_cProxima"
+            android:layout_below="@id/msg_cHoraGuardado"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:textSize="18sp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/data_footer"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/btn_aceptar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textStyle="bold"
+            android:layout_alignParentEnd="true"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:text="Aceptar" />
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

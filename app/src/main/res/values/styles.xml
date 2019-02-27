@@ -8,7 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="TextResaltado">
+    <style name="TextResaltadoLarge">
         <item name="android:background">@drawable/custom_text_resaltado</item>
         <item name="android:layout_marginStart">50dp</item>
         <item name="android:layout_marginEnd">50dp</item>
@@ -17,10 +17,20 @@
         <item name="android:gravity">center</item>
         <item name="android:textColor">@color/colorPrimaryText</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">14sp</item>
     </style>
 
-    <style name="CustomEditText">
+    <style name="TextResaltadoNormal">
+        <item name="android:background">@drawable/custom_text_resaltado</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/colorPrimaryText</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="CustomEditTextLarge">
         <item name="android:background">@drawable/custom_edittext</item>
         <item name="android:layout_marginStart">50dp</item>
         <item name="android:layout_marginEnd">50dp</item>
@@ -29,13 +39,50 @@
         <item name="android:textSize">20sp</item>
     </style>
 
-    <style name="TextIndicadores">
+    <style name="CustomEditTextNormal">
+        <item name="android:background">@drawable/custom_edittext</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
 
-        <item name="android:textSize">17sp</item>
+    <style name="TextIndicadoresNormal">
+
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textAlignment">textStart</item>
+
+        <!--<item name=""></item>-->
+    </style>
+    <style name="TextIndicadoresLarge">
+
+        <item name="android:textSize">18sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textAllCaps">true</item>
         <!--<item name=""></item>-->
-
     </style>
+
+    <style name="HintSize" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="BarraIndicadoresLarge" >
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:textSize">19sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="BarraIndicadoresNormal" >
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 
 </resources>

@@ -2,21 +2,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="315dp"
-    android:layout_height="320dp"
+    android:layout_width="550dp"
+    android:layout_height="480dp"
     android:layout_gravity="center"
-    android:background="@drawable/custom_popup"
-    android:animateLayoutChanges="true">
+    android:background="@drawable/custom_popup">
 
     <ImageView
         android:id="@+id/img_war"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
-        android:src="@drawable/img_warning_red"
-        android:contentDescription="@string/error_icono_descripcion" />
+        android:src="@drawable/img_warning_red" />
 
     <TextView
         android:id="@+id/msg_error"
@@ -25,59 +23,60 @@
         android:layout_below="@+id/img_war"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp"
-        android:textSize="20sp"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="20dp"
-        android:layout_above="@+id/lyt_eFooter"
+        android:layout_marginBottom="124dp"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:text="@string/observaciones" />
+            android:text="@string/observaciones"
+            android:textSize="22sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:baselineAligned="false"
             android:layout_marginTop="8dp">
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.7">
+                android:layout_weight="0.8">
 
                 <EditText
-                    android:id="@+id/txt_error_id"
+                    android:id="@+id/txt_observaciones"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/hint_codigo"
+                    android:hint="Codigo"
                     android:inputType="number"
                     android:maxLength="4"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.3">
+                android:layout_weight="0.2">
 
                 <EditText
-                    android:id="@+id/txt_descripcion"
+                    android:id="@+id/txt_o"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/hint_opcional"
-                    android:inputType="textAutoComplete|textAutoCorrect|textCapWords" />
+                    android:hint="Opcional"
+                    android:inputType="textAutoComplete|textAutoCorrect"
+                    android:textSize="20sp" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -87,7 +86,6 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/lyt_eFooter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -99,8 +97,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="12sp"
-            android:text="Cancelar" />
+            android:text="Cancelar"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/btn_enviar"
@@ -108,9 +106,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:text="Enviar" />
+            android:text="Enviar"
+            android:textSize="20sp" />
     </LinearLayout>
 
 

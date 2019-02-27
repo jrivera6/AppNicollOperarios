@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="500dp"
+    android:layout_height="400dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/custom_popup"
+    android:layout_gravity="center">
+
+    <RelativeLayout
+        android:id="@+id/data_header"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:textColor="@color/colorPrimaryTextLight"
+            android:text="CAMBIO DE TURNO"/>
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="41dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_group_white_24dp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/data_body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/data_header"
+        android:layout_above="@+id/data_footer"
+        android:layout_margin="8dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="26sp"
+            android:text="@string/nom_apellido_hint"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            app:hintTextAppearance="@style/HintSize">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/supervisor_hint"
+                android:inputType="textCapWords"
+                android:textAlignment="center"
+                android:textSize="25sp"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:textSize="23sp"
+            android:text="@string/ejemplo_hint"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/data_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/btn_aceptar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textSize="18sp"
+            android:layout_alignParentEnd="true"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:text="Aceptar" />
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

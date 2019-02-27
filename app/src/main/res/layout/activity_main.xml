@@ -6,348 +6,1524 @@
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity">
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appbar"
+
+    <RelativeLayout
+        android:id="@+id/main_app"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true">
+        android:layout_height="wrap_content">
 
-        <android.support.v7.widget.Toolbar
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize">
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
 
-            <RelativeLayout
+            <android.support.v7.widget.Toolbar
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="?attr/actionBarSize">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="NICOLL PERU"
+                        android:textColor="@color/colorText"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextClock
+                        android:id="@+id/txt_clock"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/btn_error"
+                        android:textColor="@color/colorPrimaryTextLight"
+                        android:textSize="19sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/btn_error"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="8dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:src="@drawable/ic_warning" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/appbar"
+            android:layout_alignParentStart="true"
+            android:orientation="vertical"
+            android:paddingStart="8dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:gravity="center"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="NICOLL PERU"
-                    android:textColor="@color/colorText"
-                    android:textSize="30dp"
-                    android:textStyle="bold" />
-
-                <TextClock
-                    android:id="@+id/txt_clock"
-                    android:layout_width="wrap_content"
+                    style="@style/TextIndicadoresNormal"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toStartOf="@+id/btn_error"
-                    android:textColor="@color/colorPrimaryTextLight"
-                    android:textSize="30sp"
+                    android:layout_weight="0.25"
+                    android:text="Maquina:" />
+
+                <TextView
+                    android:id="@+id/txt_num_maquina"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:gravity="center"
+                    android:text="@string/num_maquina"
+                    android:textColor="@color/colorCabecera"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
-                <ImageView
-                    android:id="@+id/btn_error"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerInParent="true"
+                <TextView
+                    style="@style/TextIndicadoresNormal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:src="@drawable/ic_warning" />
+                    android:layout_weight="0.25"
+                    android:text="Turno:" />
 
-            </RelativeLayout>
+                <TextView
+                    android:id="@+id/txt_turno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:gravity="center"
+                    android:textColor="@color/colorCabecera"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:text="A" />
 
-        </android.support.v7.widget.Toolbar>
+            </LinearLayout>
 
-    </android.support.design.widget.AppBarLayout>
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:layout_marginBottom="4dp">-->
 
-    <LinearLayout
-        android:id="@+id/linear_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/appbar"
-        android:layout_alignParentStart="true"
-        android:orientation="vertical"
-        android:paddingStart="18dp"
-        android:paddingTop="18dp"
-        android:paddingEnd="18dp"
-        android:paddingBottom="8dp">
+            <!--<TextView-->
+            <!--style="@style/TextIndicadoresNormal"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_weight="0.6"-->
+            <!--android:text="Maquinista:" />-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="0.4"-->
+            <!--app:hintEnabled="false">-->
 
-            <TextView
-                style="@style/TextIndicadores"
+            <!--<EditText-->
+            <!--android:id="@+id/txt_maquinista_nom"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:background="@drawable/custom_edittext"-->
+            <!--android:hint="@string/nombre_completo"-->
+            <!--android:inputType="textCapWords" />-->
+
+
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+
+            <!--</LinearLayout>-->
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.6"
-                android:text="Maquina:" />
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/txt_num_maquina"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.4"
-                android:text="@string/num_maquina"
-                android:textSize="19sp"
-                android:textStyle="bold" />
+                <TextView
+                    style="@style/TextIndicadoresNormal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:text="Maquinista:" />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="4dp">
-
-            <TextView
-                style="@style/TextIndicadores"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="0.6"
-                android:text="Maquinista:" />
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.4"
-                app:hintEnabled="false">
-
-                <EditText
+                <TextView
                     android:id="@+id/txt_maquinista_nom"
+                    style="@style/TextIndicadoresNormal"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:background="@drawable/custom_edittext"
-                    android:hint="@string/nombre_completo"
-                    android:inputType="textCapWords" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:textAlignment="center"
+                    tools:text="Rivera" />
 
+                <TextView
+                    style="@style/TextIndicadoresNormal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="0.25"
+                    android:text="Supervisor:" />
 
-            </android.support.design.widget.TextInputLayout>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="4dp">
-
-            <TextView
-                style="@style/TextIndicadores"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="0.6"
-                android:text="Supervisor:" />
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.4"
-                app:hintEnabled="false">
-
-                <EditText
+                <TextView
                     android:id="@+id/txt_supervisor_nom"
+                    style="@style/TextIndicadoresNormal"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:background="@drawable/custom_edittext"
-                    android:hint="@string/nombre_completo"
-                    android:inputType="textCapWords" />
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.25"
+                    android:textAlignment="center"
+                    tools:text="Prueba" />
 
 
-            </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_marginTop="4dp"-->
+            <!--android:layout_marginBottom="4dp">-->
+
+            <!--<TextView-->
+            <!--style="@style/TextIndicadoresNormal"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_weight="0.6"-->
+            <!--android:text="Supervisor:" />-->
+
+            <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="0.4"-->
+            <!--app:hintEnabled="false">-->
+
+            <!--<EditText-->
+            <!--android:id="@+id/txt_supervisor_nom"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:background="@drawable/custom_edittext"-->
+            <!--android:hint="@string/nombre_completo"-->
+            <!--android:inputType="textCapWords" />-->
 
 
-        </LinearLayout>
+            <!--</android.support.design.widget.TextInputLayout>-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="4dp">
 
-            <TextView
-                style="@style/TextIndicadores"
+            <!--</LinearLayout>-->
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="0.6"
-                android:text="@string/codigo_de_tubo" />
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.4"
-                app:hintEnabled="false">
-
-                <EditText
-                    android:id="@+id/txt_codigo_tubo"
+                <TextView
+                    style="@style/TextIndicadoresNormal"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:background="@drawable/custom_edittext"
-                    android:hint="@string/codigo_de_tubo_hint"
-                    android:inputType="number"
-                    android:maxLength="7" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
+                    android:text="@string/codigo_de_tubo" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="0.3"
+                    app:hintEnabled="false">
+
+                    <EditText
+                        android:id="@+id/txt_codigo_tubo"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:background="@drawable/custom_edittext"
+                        android:hint="@string/codigo_de_tubo_hint"
+                        android:inputType="number"
+                        android:maxLength="8"
+                        android:paddingStart="8dp"
+                        android:textSize="14sp" />
 
 
-            </android.support.design.widget.TextInputLayout>
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:animateLayoutChanges="true"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextIndicadoresNormal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.74"
+                    android:text="Descripción" />
+
+                <TextView
+                    android:id="@+id/txt_descripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="0.26"
+                    android:text="Una breve descripcion..."
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_marginTop="4dp"-->
+            <!--android:layout_marginBottom="4dp">-->
+
+            <!--<TextView-->
+            <!--style="@style/TextIndicadoresNormal"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="0.6"-->
+            <!--android:text="Turno:" />-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/txt_turno"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="0.4"-->
+            <!--android:text="@string/turno_default"-->
+            <!--android:textSize="19sp"-->
+            <!--android:textStyle="bold" />-->
+
+            <!--</LinearLayout>-->
 
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/barrar_linear"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="4dp">
-
-            <TextView
-                style="@style/TextIndicadores"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.6"
-                android:text="Descripción:" />
-
-            <TextView
-                android:id="@+id/txt_descripcion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.4"
-                android:textStyle="bold"
-                android:text="Una breve descripcion..."
-                android:textSize="17sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="4dp">
-
-            <TextView
-                style="@style/TextIndicadores"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.6"
-                android:text="Turno:" />
-
-            <TextView
-                android:id="@+id/txt_turno"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.4"
-                android:text="@string/turno_default"
-                android:textSize="19sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/linear_layout"
+            android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:background="@color/colorPrimary"
             android:orientation="horizontal"
-            android:padding="5dp">
+            android:padding="8dp">
 
             <TextView
+                style="@style/BarraIndicadoresNormal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:text="INDICADORES"
-                android:textColor="@color/colorText"
-                android:textSize="19sp"
-                android:textStyle="bold" />
+                android:text="INDICADORES" />
 
             <TextView
+                style="@style/BarraIndicadoresNormal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:text="ESTÁNDAR"
-                android:textColor="@color/colorText"
-                android:textSize="19sp"
-                android:textStyle="bold" />
+                android:text="ESTÁNDAR" />
 
             <TextView
+                style="@style/BarraIndicadoresNormal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:text="ACTUAL"
-                android:textColor="@color/colorText"
-                android:textSize="19sp"
-                android:textStyle="bold" />
+                android:text="ACTUAL" />
 
         </LinearLayout>
 
-    </LinearLayout>
-
-    <ScrollView
-        android:id="@+id/scroll_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/btn_guardar"
-        android:layout_below="@+id/linear_layout"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:paddingStart="19dp"
-        android:paddingEnd="19dp">
-
-
-        <LinearLayout
+        <ScrollView
+            android:id="@+id/scroll_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btn_guardar"
+            android:layout_below="@+id/barrar_linear"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp">
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:orientation="vertical">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="CILINDRO:"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="CILINDRO:"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="OIL"
+                            android:textSize="12sp" />
+
+                        <!--<View-->
+                        <!--android:layout_width="10dp"-->
+                        <!--android:layout_height="50dp"-->
+                        <!--android:background="@color/colorAccent"/>-->
+
+
+                        <TextView
+                            android:id="@+id/estandar_oil"
+                            style="@style/TextResaltadoNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/txt_oil"
+                                style="@style/CustomEditTextNormal"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:inputType="number"
+                                android:maxLength="3" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="ZONA 1"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/estandar_cil_zona1"
+                            style="@style/TextResaltadoNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_weight="1" />
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:hintEnabled="false">
+
+                            <EditText
+                                android:id="@+id/txt_cil_zona1"
+                                style="@style/CustomEditTextNormal"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:inputType="number"
+                                android:maxLength="3" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="ZONA 2"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/estandar_cil_zona2"
+                            style="@style/TextResaltadoNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1" />
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:hintEnabled="false">
+
+                            <EditText
+                                android:id="@+id/txt_cil_zona2"
+                                style="@style/CustomEditTextNormal"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:inputType="number"
+                                android:maxLength="3" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="ZONA 3"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/estandar_cil_zona3"
+                            style="@style/TextResaltadoNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+
+                            android:layout_gravity="center"
+                            android:layout_weight="1" />
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:hintEnabled="false">
+
+                            <EditText
+                                android:id="@+id/txt_cil_zona3"
+                                style="@style/CustomEditTextNormal"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:inputType="number"
+                                android:maxLength="3" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="ZONA 4"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/estandar_cil_zona4"
+                            style="@style/TextResaltadoNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1" />
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:hintEnabled="false">
+
+                            <EditText
+                                android:id="@+id/txt_cil_zona4"
+                                style="@style/CustomEditTextNormal"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:inputType="number"
+                                android:maxLength="3" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="ZONA 5"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/estandar_cil_zona5"
+                            style="@style/TextResaltadoNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1" />
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:hintEnabled="false">
+
+                            <EditText
+                                android:id="@+id/txt_cil_zona5"
+                                style="@style/CustomEditTextNormal"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:inputType="number"
+                                android:maxLength="3" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_6a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="ZONA 6"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/estandar_cil_zona6"
+                            style="@style/TextResaltadoNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1" />
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:hintEnabled="false">
+
+                            <EditText
+                                android:id="@+id/txt_cil_zona6"
+                                style="@style/CustomEditTextNormal"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:inputType="number"
+                                android:maxLength="3" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="CABEZAL:"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="INTERNA"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/estandar_interna"
+                            style="@style/TextResaltadoNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/txt_interna"
+                                style="@style/CustomEditTextNormal"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:inputType="number"
+                                android:maxLength="3" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="ZONA 1"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/estandar_cab_zona1"
+                            style="@style/TextResaltadoNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/txt_cab_zona1"
+                                style="@style/CustomEditTextNormal"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:inputType="number"
+                                android:maxLength="3" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="ZONA 2"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/estandar_cab_zona2"
+                            style="@style/TextResaltadoNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/txt_cab_zona2"
+                                style="@style/CustomEditTextNormal"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:inputType="number"
+                                android:maxLength="3" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="ZONA 3"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/estandar_cab_zona3"
+                            style="@style/TextResaltadoNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/txt_cab_zona3"
+                                style="@style/CustomEditTextNormal"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:inputType="number"
+                                android:maxLength="3" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="ZONA 4"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/estandar_cab_zona4"
+                            style="@style/TextResaltadoNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/txt_cab_zona4"
+                                style="@style/CustomEditTextNormal"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:inputType="number"
+                                android:maxLength="3" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="ZONA 5"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/estandar_cab_zona5"
+                            style="@style/TextResaltadoNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/txt_cab_zona5"
+                                style="@style/CustomEditTextNormal"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:inputType="number"
+                                android:maxLength="3" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="ZONA 6"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/estandar_cab_zona6"
+                            style="@style/TextResaltadoNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/txt_cab_zona6"
+                                style="@style/CustomEditTextNormal"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:inputType="number"
+                                android:maxLength="3" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="ZONA 7"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/estandar_cab_zona7"
+                            style="@style/TextResaltadoNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/txt_cab_zona7"
+                                style="@style/CustomEditTextNormal"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:inputType="number"
+                                android:maxLength="3" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="ZONA 8"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/estandar_cab_zona8"
+                            style="@style/TextResaltadoNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/txt_cab_zona8"
+                                style="@style/CustomEditTextNormal"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:inputType="number"
+                                android:maxLength="3" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="ZONA 9"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/estandar_cab_zona9"
+                            style="@style/TextResaltadoNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/txt_cab_zona9"
+                                style="@style/CustomEditTextNormal"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:inputType="number"
+                                android:maxLength="3" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="ZONA 10"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/estandar_cab_zona10"
+                            style="@style/TextResaltadoNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/txt_cab_zona10"
+                                style="@style/CustomEditTextNormal"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:inputType="number"
+                                android:maxLength="3" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="ZONA 11"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/estandar_cab_zona11"
+                            style="@style/TextResaltadoNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/txt_cab_zona11"
+                                style="@style/CustomEditTextNormal"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:inputType="number"
+                                android:maxLength="3" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="ZONA 12"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/estandar_cab_zona12"
+                            style="@style/TextResaltadoNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/txt_cab_zona12"
+                                style="@style/CustomEditTextNormal"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:inputType="number"
+                                android:maxLength="3" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_13"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="ZONA 13"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/estandar_cab_zona13"
+                            style="@style/TextResaltadoNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/txt_cab_zona13"
+                                style="@style/CustomEditTextNormal"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:inputType="number"
+                                android:maxLength="3" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="ZONA 14"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/estandar_cab_zona14"
+                            style="@style/TextResaltadoNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/txt_cab_zona14"
+                                style="@style/CustomEditTextNormal"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:inputType="number"
+                                android:maxLength="3" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="ZONA 15"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/estandar_cab_zona15"
+                            style="@style/TextResaltadoNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/txt_cab_zona15"
+                                style="@style/CustomEditTextNormal"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:inputType="number"
+                                android:maxLength="3" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="ZONA 16"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/estandar_cab_zona16"
+                            style="@style/TextResaltadoNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/txt_cab_zona16"
+                                style="@style/CustomEditTextNormal"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:inputType="number"
+                                android:maxLength="3" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_17"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="ZONA 17"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/estandar_cab_zona17"
+                            style="@style/TextResaltadoNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/txt_cab_zona17"
+                                style="@style/CustomEditTextNormal"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:inputType="number"
+                                android:maxLength="3" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="ZONA 18"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/estandar_cab_zona18"
+                            style="@style/TextResaltadoNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/txt_cab_zona18"
+                                style="@style/CustomEditTextNormal"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:inputType="number"
+                                android:maxLength="3" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
                     android:orientation="horizontal">
 
                     <TextView
+                        style="@style/TextIndicadoresNormal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:text="OIL"
-                        android:textSize="17sp" />
-
-                    <!--<View-->
-                    <!--android:layout_width="10dp"-->
-                    <!--android:layout_height="50dp"-->
-                    <!--android:background="@color/colorAccent"/>-->
-
+                        android:text="Nombre del cabezal:" />
 
                     <TextView
-                        android:id="@+id/estandar_oil"
-                        style="@style/TextResaltado"
+                        android:id="@+id/estandar_nombre_cabezal"
+                        style="@style/TextResaltadoNormal"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1" />
+
+                    <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/txt_nombre_cabezal"
+                            style="@style/CustomEditTextNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:inputType="text"
+                            android:maxLength="10" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TextIndicadoresNormal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="Diametro de Restrictor o filtro (mm):" />
+
+                    <TextView
+                        android:id="@+id/estandar_diametro_restrictor"
+                        style="@style/TextResaltadoNormal"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
                         android:layout_weight="1" />
 
                     <android.support.design.widget.TextInputLayout
@@ -356,312 +1532,92 @@
                         android:layout_weight="1">
 
                         <EditText
-                            android:id="@+id/txt_oil"
-                            style="@style/CustomEditText"
+                            android:id="@+id/txt_diametro_restrictor"
+                            style="@style/CustomEditTextNormal"
                             android:layout_width="match_parent"
-                            android:layout_height="46dp"
-                            android:inputType="number"
-                            android:maxLength="3" />
+                            android:layout_height="25dp"
+                            android:inputType="number" />
 
                     </android.support.design.widget.TextInputLayout>
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:text="ZONA 1"
-                        android:textSize="17sp" />
-
-                    <TextView
-                        android:id="@+id/estandar_cil_zona1"
-                        style="@style/TextResaltado"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1" />
-
-
-                    <android.support.design.widget.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:hintEnabled="false">
-
-                        <EditText
-                            android:id="@+id/txt_cil_zona1"
-                            android:layout_width="match_parent"
-                            android:layout_height="46dp"
-                            style="@style/CustomEditText"
-                            android:inputType="number"
-                            android:maxLength="3" />
-
-                    </android.support.design.widget.TextInputLayout>
-
-                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
                     android:orientation="horizontal">
 
                     <TextView
+                        style="@style/TextIndicadoresNormal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:text="ZONA 2"
-                        android:textSize="17sp" />
+                        android:text="RPM Motor de la extrusora:" />
 
                     <TextView
-                        android:id="@+id/estandar_cil_zona2"
-                        style="@style/TextResaltado"
+                        android:id="@+id/estandar_rpm_motor_extr"
+                        style="@style/TextResaltadoNormal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1" />
-
-
-                    <android.support.design.widget.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:hintEnabled="false">
-
-                        <EditText
-                            android:id="@+id/txt_cil_zona2"
-                            android:layout_width="match_parent"
-                            android:layout_height="46dp"
-                            style="@style/CustomEditText"
-                            android:inputType="number"
-                            android:maxLength="3" />
-
-                    </android.support.design.widget.TextInputLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:text="ZONA 3"
-                        android:textSize="17sp" />
-
-                    <TextView
-                        android:id="@+id/estandar_cil_zona3"
-                        style="@style/TextResaltado"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1" />
-
-
-                    <android.support.design.widget.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:hintEnabled="false">
-
-                        <EditText
-                            android:id="@+id/txt_cil_zona3"
-                            android:layout_width="match_parent"
-                            android:layout_height="46dp"
-                            style="@style/CustomEditText"
-                            android:inputType="number"
-                            android:maxLength="3" />
-
-                    </android.support.design.widget.TextInputLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:text="ZONA 4"
-                        android:textSize="17sp" />
-
-                    <TextView
-                        android:id="@+id/estandar_cil_zona4"
-                        style="@style/TextResaltado"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1" />
-
-
-                    <android.support.design.widget.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:hintEnabled="false">
-
-                        <EditText
-                            android:id="@+id/txt_cil_zona4"
-                            android:layout_width="match_parent"
-                            android:layout_height="46dp"
-                            style="@style/CustomEditText"
-                            android:inputType="number"
-                            android:maxLength="3" />
-
-                    </android.support.design.widget.TextInputLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:text="ZONA 5"
-                        android:textSize="17sp" />
-
-                    <TextView
-                        android:id="@+id/estandar_cil_zona5"
-                        style="@style/TextResaltado"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1" />
-
-
-                    <android.support.design.widget.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:hintEnabled="false">
-
-                        <EditText
-                            android:id="@+id/txt_cil_zona5"
-                            android:layout_width="match_parent"
-                            android:layout_height="46dp"
-                            style="@style/CustomEditText"
-                            android:inputType="number"
-                            android:maxLength="3" />
-
-                    </android.support.design.widget.TextInputLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linear_6a"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:text="ZONA 6"
-                        android:textSize="17sp" />
-
-                    <TextView
-                        android:id="@+id/estandar_cil_zona6"
-                        style="@style/TextResaltado"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1" />
-
-
-                    <android.support.design.widget.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:hintEnabled="false">
-
-                        <EditText
-                            android:id="@+id/txt_cil_zona6"
-                            android:layout_width="match_parent"
-                            android:layout_height="46dp"
-                            style="@style/CustomEditText"
-                            android:inputType="number"
-                            android:maxLength="3" />
-
-                    </android.support.design.widget.TextInputLayout>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="CABEZAL:"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:text="INTERNA"
-                        android:textSize="17sp" />
-
-                    <TextView
-                        android:id="@+id/estandar_interna"
-                        style="@style/TextResaltado"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="25dp"
                         android:layout_gravity="center"
                         android:layout_weight="1" />
 
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_weight="1">
 
                         <EditText
-                            android:id="@+id/txt_interna"
+                            android:id="@+id/txt_rpm_motor_extr"
+                            style="@style/CustomEditTextNormal"
                             android:layout_width="match_parent"
-                            android:layout_height="45dp"
-                            style="@style/CustomEditText"
+                            android:layout_height="25dp"
+                            android:inputType="number"
+                            android:maxLength="4" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TextIndicadoresNormal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="Ampera motor de la extrusora:" />
+
+                    <TextView
+                        android:id="@+id/estandar_amperaje_motor_ext"
+                        style="@style/TextResaltadoNormal"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/txt_amperaje_motor_ext"
+                            style="@style/CustomEditTextNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
                             android:inputType="number"
                             android:maxLength="3" />
 
@@ -672,35 +1628,37 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
                     android:orientation="horizontal">
 
                     <TextView
+                        style="@style/TextIndicadoresNormal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:text="ZONA 1"
-                        android:textSize="17sp" />
+                        android:text="RPM o RevMin de los tornillos:" />
 
                     <TextView
-                        android:id="@+id/estandar_cab_zona1"
-                        style="@style/TextResaltado"
+                        android:id="@+id/estandar_rpm_revmin_tornillos"
+                        style="@style/TextResaltadoNormal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="25dp"
                         android:layout_gravity="center"
                         android:layout_weight="1" />
 
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_weight="1">
 
                         <EditText
-                            android:id="@+id/txt_cab_zona1"
+                            android:id="@+id/txt_rpm_revmin_tornillos"
+                            style="@style/CustomEditTextNormal"
                             android:layout_width="match_parent"
-                            android:layout_height="46dp"
-                            style="@style/CustomEditText"
+                            android:layout_height="25dp"
                             android:inputType="number"
                             android:maxLength="3" />
 
@@ -711,35 +1669,78 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
                     android:orientation="horizontal">
 
                     <TextView
+                        style="@style/TextIndicadoresNormal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:text="ZONA 2"
-                        android:textSize="17sp" />
+                        android:text="% de velocidad del alimentador:" />
 
                     <TextView
-                        android:id="@+id/estandar_cab_zona2"
-                        style="@style/TextResaltado"
+                        android:id="@+id/estandar_porcentaje_vel_alimentador"
+                        style="@style/TextResaltadoNormal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="25dp"
                         android:layout_gravity="center"
                         android:layout_weight="1" />
 
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_weight="1">
 
                         <EditText
-                            android:id="@+id/txt_cab_zona2"
+                            android:id="@+id/txt_porcentaje_vel_alimentador"
+                            style="@style/CustomEditTextNormal"
                             android:layout_width="match_parent"
-                            android:layout_height="46dp"
-                            style="@style/CustomEditText"
+                            android:layout_height="25dp"
+                            android:inputType="number"
+                            android:maxLength="5" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TextIndicadoresNormal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="Amperaje del motor del alimentador:" />
+
+                    <TextView
+                        android:id="@+id/estandar_amperaje_motor_alimen"
+                        style="@style/TextResaltadoNormal"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/txt_amperaje_motor_alimen"
+                            style="@style/CustomEditTextNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
                             android:inputType="number"
                             android:maxLength="3" />
 
@@ -748,39 +1749,81 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/linear_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
                     android:orientation="horizontal">
 
                     <TextView
+                        style="@style/TextIndicadoresNormal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:text="ZONA 3"
-                        android:textSize="17sp" />
+                        android:text="Desgasificador de vacio:" />
 
                     <TextView
-                        android:id="@+id/estandar_cab_zona3"
-                        style="@style/TextResaltado"
+                        android:id="@+id/estandar_desgasificador_vacio"
+                        style="@style/TextResaltadoNormal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="25dp"
                         android:layout_gravity="center"
                         android:layout_weight="1" />
 
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_weight="1">
 
                         <EditText
-                            android:id="@+id/txt_cab_zona3"
+                            android:id="@+id/txt_desgasificador_vacio"
+                            style="@style/CustomEditTextNormal"
                             android:layout_width="match_parent"
-                            android:layout_height="46dp"
-                            style="@style/CustomEditText"
-                            android:inputType="number"
+                            android:layout_height="25dp"
+                            android:inputType="numberDecimal"
+                            android:maxLength="4" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TextIndicadoresNormal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="Presion de masa (bar):" />
+
+                    <TextView
+                        android:id="@+id/estandar_presion_masa"
+                        style="@style/TextResaltadoNormal"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/txt_presion_masa"
+                            style="@style/CustomEditTextNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:inputType="numberSigned"
                             android:maxLength="3" />
 
                     </android.support.design.widget.TextInputLayout>
@@ -788,39 +1831,40 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/linear_4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
                     android:orientation="horizontal">
 
                     <TextView
+                        style="@style/TextIndicadoresNormal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:text="ZONA 4"
-                        android:textSize="17sp" />
+                        android:text="Temperatura de masa (°C):" />
 
                     <TextView
-                        android:id="@+id/estandar_cab_zona4"
-                        style="@style/TextResaltado"
+                        android:id="@+id/estandar_temp_masa"
+                        style="@style/TextResaltadoNormal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="25dp"
                         android:layout_gravity="center"
                         android:layout_weight="1" />
 
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_weight="1">
 
                         <EditText
-                            android:id="@+id/txt_cab_zona4"
+                            android:id="@+id/txt_temp_masa"
+                            style="@style/CustomEditTextNormal"
                             android:layout_width="match_parent"
-                            android:layout_height="46dp"
-                            style="@style/CustomEditText"
-                            android:inputType="number"
+                            android:layout_height="25dp"
+                            android:inputType="numberSigned"
                             android:maxLength="3" />
 
                     </android.support.design.widget.TextInputLayout>
@@ -828,39 +1872,40 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/linear_5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
                     android:orientation="horizontal">
 
                     <TextView
+                        style="@style/TextIndicadoresNormal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:text="ZONA 5"
-                        android:textSize="17sp" />
+                        android:text="Contrapresión:" />
 
                     <TextView
-                        android:id="@+id/estandar_cab_zona5"
-                        style="@style/TextResaltado"
+                        android:id="@+id/estandar_contrapresion"
+                        style="@style/TextResaltadoNormal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="25dp"
                         android:layout_gravity="center"
                         android:layout_weight="1" />
 
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_weight="1">
 
                         <EditText
-                            android:id="@+id/txt_cab_zona5"
+                            android:id="@+id/txt_contrapresion"
+                            style="@style/CustomEditTextNormal"
                             android:layout_width="match_parent"
-                            android:layout_height="46dp"
-                            style="@style/CustomEditText"
-                            android:inputType="number"
+                            android:layout_height="25dp"
+                            android:inputType="numberSigned"
                             android:maxLength="3" />
 
                     </android.support.design.widget.TextInputLayout>
@@ -868,39 +1913,81 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/linear_6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
                     android:orientation="horizontal">
 
                     <TextView
+                        style="@style/TextIndicadoresNormal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:text="ZONA 6"
-                        android:textSize="17sp" />
+                        android:text="Vacio 1ra. Tina (ln/Hg):" />
 
                     <TextView
-                        android:id="@+id/estandar_cab_zona6"
-                        style="@style/TextResaltado"
+                        android:id="@+id/estandar_vacio_prim_tina"
+                        style="@style/TextResaltadoNormal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="25dp"
                         android:layout_gravity="center"
                         android:layout_weight="1" />
 
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_weight="1">
 
                         <EditText
-                            android:id="@+id/txt_cab_zona6"
+                            android:id="@+id/txt_vacio_prim_tina"
+                            style="@style/CustomEditTextNormal"
                             android:layout_width="match_parent"
-                            android:layout_height="46dp"
-                            style="@style/CustomEditText"
-                            android:inputType="number"
+                            android:layout_height="25dp"
+                            android:inputType="numberDecimal"
+                            android:maxLength="6" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TextIndicadoresNormal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="Temperatura 1ra. Tina de Enfriamiento (°C):" />
+
+                    <TextView
+                        android:id="@+id/estandar_temp_primtina_enfriamiento"
+                        style="@style/TextResaltadoNormal"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/txt_temp_primtina_enfriamiento"
+                            style="@style/CustomEditTextNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:inputType="numberSigned"
                             android:maxLength="3" />
 
                     </android.support.design.widget.TextInputLayout>
@@ -908,39 +1995,40 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/linear_7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
                     android:orientation="horizontal">
 
                     <TextView
+                        style="@style/TextIndicadoresNormal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:text="ZONA 7"
-                        android:textSize="17sp" />
+                        android:text="Presion de agua 1ra. Tina de enfriamiento:" />
 
                     <TextView
-                        android:id="@+id/estandar_cab_zona7"
-                        style="@style/TextResaltado"
+                        android:id="@+id/estandar_presion_agua_primtina"
+                        style="@style/TextResaltadoNormal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="25dp"
                         android:layout_gravity="center"
                         android:layout_weight="1" />
 
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_weight="1">
 
                         <EditText
-                            android:id="@+id/txt_cab_zona7"
+                            android:id="@+id/txt_presion_agua_primtina"
+                            style="@style/CustomEditTextNormal"
                             android:layout_width="match_parent"
-                            android:layout_height="46dp"
-                            style="@style/CustomEditText"
-                            android:inputType="number"
+                            android:layout_height="25dp"
+                            android:inputType="numberDecimal"
                             android:maxLength="3" />
 
                     </android.support.design.widget.TextInputLayout>
@@ -948,39 +2036,122 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/linear_8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
                     android:orientation="horizontal">
 
                     <TextView
+                        style="@style/TextIndicadoresNormal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:text="ZONA 8"
-                        android:textSize="17sp" />
+                        android:text="Vacio 2da. Tina de enfriamiento:" />
 
                     <TextView
-                        android:id="@+id/estandar_cab_zona8"
-                        style="@style/TextResaltado"
+                        android:id="@+id/estandar_vacio_seguntina"
+                        style="@style/TextResaltadoNormal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="25dp"
                         android:layout_gravity="center"
                         android:layout_weight="1" />
 
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_weight="1">
 
                         <EditText
-                            android:id="@+id/txt_cab_zona8"
+                            android:id="@+id/txt_vacio_seguntina"
+                            style="@style/CustomEditTextNormal"
                             android:layout_width="match_parent"
-                            android:layout_height="46dp"
-                            style="@style/CustomEditText"
-                            android:inputType="number"
+                            android:layout_height="25dp"
+                            android:inputType="numberDecimal"
+                            android:maxLength="5" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TextIndicadoresNormal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="Velocidad del alador (m/min):" />
+
+                    <TextView
+                        android:id="@+id/estandar_velocidar_halador"
+                        style="@style/TextResaltadoNormal"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/txt_velocidar_halador"
+                            style="@style/CustomEditTextNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:inputType="number|numberDecimal"
+                            android:maxLength="5" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TextIndicadoresNormal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="Limpieza de filtro de tina:" />
+
+                    <TextView
+                        android:id="@+id/estandar_limpieza_filtro_tina"
+                        style="@style/TextResaltadoNormal"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/txt_limpieza_filtro_tina"
+                            style="@style/CustomEditTextNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:inputType="text"
                             android:maxLength="3" />
 
                     </android.support.design.widget.TextInputLayout>
@@ -988,39 +2159,163 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/linear_9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
                     android:orientation="horizontal">
 
                     <TextView
+                        style="@style/TextIndicadoresNormal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:text="ZONA 9"
-                        android:textSize="17sp" />
+                        android:text="Altura de rótulo (mm):" />
 
                     <TextView
-                        android:id="@+id/estandar_cab_zona9"
-                        style="@style/TextResaltado"
+                        android:id="@+id/estandar_altura_rotulo"
+                        style="@style/TextResaltadoNormal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="25dp"
                         android:layout_gravity="center"
                         android:layout_weight="1" />
 
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_weight="1">
 
                         <EditText
-                            android:id="@+id/txt_cab_zona9"
+                            android:id="@+id/txt_altura_rotulo"
+                            style="@style/CustomEditTextNormal"
                             android:layout_width="match_parent"
-                            android:layout_height="46dp"
-                            style="@style/CustomEditText"
-                            android:inputType="number"
+                            android:layout_height="25dp"
+                            android:inputType="numberDecimal"
+                            android:maxLength="5" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TextIndicadoresNormal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="Espesor (mm):" />
+
+                    <TextView
+                        android:id="@+id/estandar_espesor"
+                        style="@style/TextResaltadoNormal"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/txt_espesor"
+                            style="@style/CustomEditTextNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:inputType="numberDecimal"
+                            android:maxLength="4" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TextIndicadoresNormal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="Diámetro externo (mm):" />
+
+                    <TextView
+                        android:id="@+id/estandar_diametro_externo"
+                        style="@style/TextResaltadoNormal"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/txt_diametro_externo"
+                            style="@style/CustomEditTextNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:inputType="numberSigned"
+                            android:maxLength="5" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TextIndicadoresNormal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="Longitud tubo (mm):" />
+
+                    <TextView
+                        android:id="@+id/estandar_longitud_tubo"
+                        style="@style/TextResaltadoNormal"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/txt_longitud_tubo"
+                            style="@style/CustomEditTextNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:inputType="numberSigned"
                             android:maxLength="3" />
 
                     </android.support.design.widget.TextInputLayout>
@@ -1028,39 +2323,40 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/linear_10"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
                     android:orientation="horizontal">
 
                     <TextView
+                        style="@style/TextIndicadoresNormal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:text="ZONA 10"
-                        android:textSize="17sp" />
+                        android:text="Embone:" />
 
                     <TextView
-                        android:id="@+id/estandar_cab_zona10"
-                        style="@style/TextResaltado"
+                        android:id="@+id/estandar_embone"
+                        style="@style/TextResaltadoNormal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="25dp"
                         android:layout_gravity="center"
                         android:layout_weight="1" />
 
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_weight="1">
 
                         <EditText
-                            android:id="@+id/txt_cab_zona10"
+                            android:id="@+id/txt_embone"
+                            style="@style/CustomEditTextNormal"
                             android:layout_width="match_parent"
-                            android:layout_height="46dp"
-                            style="@style/CustomEditText"
-                            android:inputType="number"
+                            android:layout_height="25dp"
+                            android:inputType="text"
                             android:maxLength="3" />
 
                     </android.support.design.widget.TextInputLayout>
@@ -1068,39 +2364,38 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/linear_11"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
                     android:orientation="horizontal">
 
                     <TextView
+                        style="@style/TextIndicadoresNormal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:text="ZONA 11"
-                        android:textSize="17sp" />
+                        android:text="Kg/h:" />
 
                     <TextView
-                        android:id="@+id/estandar_cab_zona11"
-                        style="@style/TextResaltado"
+                        android:id="@+id/estandar_kilogramos_horas"
+                        style="@style/TextResaltadoNormal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="25dp"
                         android:layout_gravity="center"
                         android:layout_weight="1" />
 
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_weight="1">
 
                         <EditText
-                            android:id="@+id/txt_cab_zona11"
+                            android:id="@+id/txt_kilogramos_horas"
+                            style="@style/CustomEditTextNormal"
                             android:layout_width="match_parent"
-                            android:layout_height="46dp"
-                            style="@style/CustomEditText"
-                            android:inputType="number"
+                            android:layout_height="25dp"
+                            android:inputType="number|numberSigned"
                             android:maxLength="3" />
 
                     </android.support.design.widget.TextInputLayout>
@@ -1108,1240 +2403,82 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/linear_12"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
                     android:orientation="horizontal">
 
                     <TextView
+                        style="@style/TextIndicadoresNormal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:text="ZONA 12"
-                        android:textSize="17sp" />
+                        android:text="Peso por tubo ó metro:" />
 
                     <TextView
-                        android:id="@+id/estandar_cab_zona12"
-                        style="@style/TextResaltado"
+                        android:id="@+id/estandar_peso_tubo_metro"
+                        style="@style/TextResaltadoNormal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="25dp"
                         android:layout_gravity="center"
                         android:layout_weight="1" />
 
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_weight="1">
 
                         <EditText
-                            android:id="@+id/txt_cab_zona12"
+                            android:id="@+id/txt_peso_tubo_metro"
+                            style="@style/CustomEditTextNormal"
                             android:layout_width="match_parent"
-                            android:layout_height="46dp"
-                            style="@style/CustomEditText"
-                            android:inputType="number"
-                            android:maxLength="3" />
+                            android:layout_height="25dp"
+                            android:inputType="numberDecimal"
+                            android:maxLength="6" />
 
                     </android.support.design.widget.TextInputLayout>
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/linear_13"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:text="ZONA 13"
-                        android:textSize="17sp" />
-
-                    <TextView
-                        android:id="@+id/estandar_cab_zona13"
-                        style="@style/TextResaltado"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1" />
-
-                    <android.support.design.widget.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1">
-
-                        <EditText
-                            android:id="@+id/txt_cab_zona13"
-                            android:layout_width="match_parent"
-                            android:layout_height="46dp"
-                            style="@style/CustomEditText"
-                            android:inputType="number"
-                            android:maxLength="3" />
-
-                    </android.support.design.widget.TextInputLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linear_14"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:text="ZONA 14"
-                        android:textSize="17sp" />
-
-                    <TextView
-                        android:id="@+id/estandar_cab_zona14"
-                        style="@style/TextResaltado"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1" />
-
-                    <android.support.design.widget.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1">
-
-                        <EditText
-                            android:id="@+id/txt_cab_zona14"
-                            android:layout_width="match_parent"
-                            android:layout_height="46dp"
-                            style="@style/CustomEditText"
-                            android:inputType="number"
-                            android:maxLength="3" />
-
-                    </android.support.design.widget.TextInputLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linear_15"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:text="ZONA 15"
-                        android:textSize="17sp" />
-
-                    <TextView
-                        android:id="@+id/estandar_cab_zona15"
-                        style="@style/TextResaltado"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1" />
-
-                    <android.support.design.widget.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1">
-
-                        <EditText
-                            android:id="@+id/txt_cab_zona15"
-                            android:layout_width="match_parent"
-                            android:layout_height="46dp"
-                            style="@style/CustomEditText"
-                            android:inputType="number"
-                            android:maxLength="3" />
-
-                    </android.support.design.widget.TextInputLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linear_16"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:text="ZONA 16"
-                        android:textSize="17sp" />
-
-                    <TextView
-                        android:id="@+id/estandar_cab_zona16"
-                        style="@style/TextResaltado"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1" />
-
-                    <android.support.design.widget.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1">
-
-                        <EditText
-                            android:id="@+id/txt_cab_zona16"
-                            android:layout_width="match_parent"
-                            android:layout_height="46dp"
-                            style="@style/CustomEditText"
-                            android:inputType="number"
-                            android:maxLength="3" />
-
-                    </android.support.design.widget.TextInputLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linear_17"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:text="ZONA 17"
-                        android:textSize="17sp" />
-
-                    <TextView
-                        android:id="@+id/estandar_cab_zona17"
-                        style="@style/TextResaltado"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1" />
-
-                    <android.support.design.widget.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1">
-
-                        <EditText
-                            android:id="@+id/txt_cab_zona17"
-                            android:layout_width="match_parent"
-                            android:layout_height="46dp"
-                            style="@style/CustomEditText"
-                            android:inputType="number"
-                            android:maxLength="3" />
-
-                    </android.support.design.widget.TextInputLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linear_18"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:text="ZONA 18"
-                        android:textSize="17sp" />
-
-                    <TextView
-                        android:id="@+id/estandar_cab_zona18"
-                        style="@style/TextResaltado"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1" />
-
-                    <android.support.design.widget.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1">
-
-                        <EditText
-                            android:id="@+id/txt_cab_zona18"
-                            android:layout_width="match_parent"
-                            android:layout_height="46dp"
-                            style="@style/CustomEditText"
-                            android:inputType="number"
-                            android:maxLength="3" />
-
-                    </android.support.design.widget.TextInputLayout>
-
-                </LinearLayout>
 
             </LinearLayout>
 
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/TextIndicadores"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="Nombre del cabezal:" />
-
-                <TextView
-                    android:id="@+id/estandar_nombre_cabezal"
-                    style="@style/TextResaltado"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <EditText
-                        android:id="@+id/txt_nombre_cabezal"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        style="@style/CustomEditText"
-                        android:inputType="text"
-                        android:maxLength="10"/>
-
-                </android.support.design.widget.TextInputLayout>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/TextIndicadores"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="Diametro de Restrictor o filtro (mm):" />
-
-                <TextView
-                    android:id="@+id/estandar_diametro_restrictor"
-                    style="@style/TextResaltado"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <EditText
-                        android:id="@+id/txt_diametro_restrictor"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        style="@style/CustomEditText"
-                        android:inputType="number" />
-
-                </android.support.design.widget.TextInputLayout>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/TextIndicadores"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="RPM Motor de la extrusora:" />
-
-                <TextView
-                    android:id="@+id/estandar_rpm_motor_extr"
-                    style="@style/TextResaltado"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <EditText
-                        android:id="@+id/txt_rpm_motor_extr"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        style="@style/CustomEditText"
-                        android:inputType="number" />
-
-                </android.support.design.widget.TextInputLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/TextIndicadores"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="Ampera motor de la extrusora:" />
-
-                <TextView
-                    android:id="@+id/estandar_amperaje_motor_ext"
-                    style="@style/TextResaltado"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <EditText
-                        android:id="@+id/txt_amperaje_motor_ext"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        style="@style/CustomEditText"
-                        android:inputType="number" />
-
-                </android.support.design.widget.TextInputLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/TextIndicadores"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="RPM o RevMin de los tornillos:" />
-
-                <TextView
-                    android:id="@+id/estandar_rpm_revmin_tornillos"
-                    style="@style/TextResaltado"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <EditText
-                        android:id="@+id/txt_rpm_revmin_tornillos"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        style="@style/CustomEditText"
-                        android:inputType="number" />
-
-                </android.support.design.widget.TextInputLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/TextIndicadores"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="% de velocidad del alimentador:" />
-
-                <TextView
-                    android:id="@+id/estandar_porcentaje_vel_alimentador"
-                    style="@style/TextResaltado"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <EditText
-                        android:id="@+id/txt_porcentaje_vel_alimentador"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        style="@style/CustomEditText"
-                        android:inputType="number" />
-
-                </android.support.design.widget.TextInputLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/TextIndicadores"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="Amperaje del motor del alimentador:" />
-
-                <TextView
-                    android:id="@+id/estandar_amperaje_motor_alimen"
-                    style="@style/TextResaltado"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <EditText
-                        android:id="@+id/txt_amperaje_motor_alimen"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        style="@style/CustomEditText"
-                        android:inputType="number" />
-
-                </android.support.design.widget.TextInputLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/TextIndicadores"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="Desgasificador de vacio:" />
-
-                <TextView
-                    android:id="@+id/estandar_desgasificador_vacio"
-                    style="@style/TextResaltado"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    >
-
-                    <EditText
-                        android:id="@+id/txt_desgasificador_vacio"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        style="@style/CustomEditText"
-                        android:inputType="numberDecimal" />
-
-                </android.support.design.widget.TextInputLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/TextIndicadores"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="Presion de masa (bar):" />
-
-                <TextView
-                    android:id="@+id/estandar_presion_masa"
-                    style="@style/TextResaltado"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <EditText
-                        android:id="@+id/txt_presion_masa"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        style="@style/CustomEditText"
-                        android:inputType="numberSigned" />
-
-                </android.support.design.widget.TextInputLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/TextIndicadores"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="Temperatura de masa (°C):" />
-
-                <TextView
-                    android:id="@+id/estandar_temp_masa"
-                    style="@style/TextResaltado"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <EditText
-                        android:id="@+id/txt_temp_masa"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        style="@style/CustomEditText"
-                        android:inputType="numberSigned" />
-
-                </android.support.design.widget.TextInputLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/TextIndicadores"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="Contrapresión:" />
-
-                <TextView
-                    android:id="@+id/estandar_contrapresion"
-                    style="@style/TextResaltado"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <EditText
-                        android:id="@+id/txt_contrapresion"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        style="@style/CustomEditText"
-                        android:inputType="numberSigned" />
-
-                </android.support.design.widget.TextInputLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/TextIndicadores"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="Vacio 1ra. Tina (ln/Hg):" />
-
-                <TextView
-                    android:id="@+id/estandar_vacio_prim_tina"
-                    style="@style/TextResaltado"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <EditText
-                        android:id="@+id/txt_vacio_prim_tina"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        style="@style/CustomEditText"
-                        android:inputType="numberDecimal" />
-
-                </android.support.design.widget.TextInputLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/TextIndicadores"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="Temperatura 1ra. Tina de Enfriamiento (°C):" />
-
-                <TextView
-                    android:id="@+id/estandar_temp_primtina_enfriamiento"
-                    style="@style/TextResaltado"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <EditText
-                        android:id="@+id/txt_temp_primtina_enfriamiento"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/CustomEditText"
-                        android:inputType="numberSigned" />
-
-                </android.support.design.widget.TextInputLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/TextIndicadores"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="Presion de agua 1ra. Tina de enfriamiento:" />
-
-                <TextView
-                    android:id="@+id/estandar_presion_agua_primtina"
-                    style="@style/TextResaltado"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <EditText
-                        android:id="@+id/txt_presion_agua_primtina"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        style="@style/CustomEditText"
-                        android:inputType="numberSigned" />
-
-                </android.support.design.widget.TextInputLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/TextIndicadores"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="Vacio 2da. Tina de enfriamiento:" />
-
-                <TextView
-                    android:id="@+id/estandar_vacio_seguntina"
-                    style="@style/TextResaltado"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <EditText
-                        android:id="@+id/txt_vacio_seguntina"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        style="@style/CustomEditText"
-                        android:inputType="numberDecimal" />
-
-                </android.support.design.widget.TextInputLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/TextIndicadores"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="Velocidad del halador (m/min):" />
-
-                <TextView
-                    android:id="@+id/estandar_velocidar_halador"
-                    style="@style/TextResaltado"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <EditText
-                        android:id="@+id/txt_velocidar_halador"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        style="@style/CustomEditText"
-                        android:inputType="numberSigned" />
-
-                </android.support.design.widget.TextInputLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/TextIndicadores"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="Limpieza de filtro de tina:" />
-
-                <TextView
-                    android:id="@+id/estandar_limpieza_filtro_tina"
-                    style="@style/TextResaltado"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <EditText
-                        android:id="@+id/txt_limpieza_filtro_tina"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        style="@style/CustomEditText"
-                        android:inputType="text" />
-
-                </android.support.design.widget.TextInputLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/TextIndicadores"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="Altura de rótulo (mm):" />
-
-                <TextView
-                    android:id="@+id/estandar_altura_rotulo"
-                    style="@style/TextResaltado"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <EditText
-                        android:id="@+id/txt_altura_rotulo"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        style="@style/CustomEditText"
-                        android:inputType="numberSigned" />
-
-                </android.support.design.widget.TextInputLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/TextIndicadores"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="Espesor (mm):" />
-
-                <TextView
-                    android:id="@+id/estandar_espesor"
-                    style="@style/TextResaltado"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <EditText
-                        android:id="@+id/txt_espesor"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        style="@style/CustomEditText"
-                        android:inputType="numberSigned" />
-
-                </android.support.design.widget.TextInputLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/TextIndicadores"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="Diámetro externo (mm):" />
-
-                <TextView
-                    android:id="@+id/estandar_diametro_externo"
-                    style="@style/TextResaltado"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <EditText
-                        android:id="@+id/txt_diametro_externo"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        style="@style/CustomEditText"
-                        android:inputType="numberSigned" />
-
-                </android.support.design.widget.TextInputLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/TextIndicadores"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="Longitud tubo (mm):" />
-
-                <TextView
-                    android:id="@+id/estandar_longitud_tubo"
-                    style="@style/TextResaltado"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <EditText
-                        android:id="@+id/txt_longitud_tubo"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        style="@style/CustomEditText"
-                        android:inputType="numberSigned" />
-
-                </android.support.design.widget.TextInputLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/TextIndicadores"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="Embone:" />
-
-                <TextView
-                    android:id="@+id/estandar_embone"
-                    style="@style/TextResaltado"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <EditText
-                        android:id="@+id/txt_embone"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        style="@style/CustomEditText"
-                        android:inputType="text" />
-
-                </android.support.design.widget.TextInputLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/TextIndicadores"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="Kg/h:" />
-
-                <TextView
-                    android:id="@+id/estandar_kilogramos_horas"
-                    style="@style/TextResaltado"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <EditText
-                        android:id="@+id/txt_kilogramos_horas"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        style="@style/CustomEditText"
-                        android:inputType="numberSigned" />
-
-                </android.support.design.widget.TextInputLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/TextIndicadores"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="Peso por tubo ó metro:" />
-
-                <TextView
-                    android:id="@+id/estandar_peso_tubo_metro"
-                    style="@style/TextResaltado"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <EditText
-                        android:id="@+id/txt_peso_tubo_metro"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        style="@style/CustomEditText"
-                        android:inputType="numberSigned" />
-
-                </android.support.design.widget.TextInputLayout>
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-    </ScrollView>
-
-    <Button
-        android:id="@+id/btn_guardar"
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btn_guardar"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:focusable="false"
+            android:onClick="guardarFormulario"
+            android:text="Guardar"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/progressBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:focusable="false"
-        android:textSize="19sp"
-        android:onClick="guardarFormulario"
-        android:text="Guardar" />
+        android:layout_height="match_parent"
+        android:alpha="0.7"
+        android:animateLayoutChanges="true"
+        android:background="@color/colorBlack"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true" />
+    </FrameLayout>
+
 
 </RelativeLayout>

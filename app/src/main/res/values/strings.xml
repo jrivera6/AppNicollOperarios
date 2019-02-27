@@ -1,11 +1,23 @@
 <resources>
     <string name="app_name">NicollPeruOperarios</string>
     <string name="titulo_empresa">Nicoll Peru</string>
-    <string name="codigo_de_tubo">Código de tubo:</string>
+    <string name="codigo_de_tubo">Código de tubo</string>
     <string name="codigo_de_tubo_hint">Ej: 123456</string>
     <string name="nombre_completo">Nombre completo</string>
     <string name="num_maquina">8</string>
     <string name="observaciones">Observaciones:</string>
     <string name="turno_default">A</string>
     <string name="aceptar">Aceptar</string>
+    <string name="nom_apellido_hint">Nombre y apellido</string>
+    <string name="ejemplo_hint">Ejemplo: Juan Perez</string>
+    <string name="supervisor_hint">Supervisor</string>
+    <string name="hora_de_guardado">Hora de guardado:</string>
+    <string name="proximo_guardado">Próximo guardado</string>
+    <string name="hint_operario">Operario</string>
+    <string name="btn_atras_data_dialog">Atras</string>
+    <string name="btn_aceptar_data_dialog">Aceptar</string>
+    <string name="btn_siguiente_data_dialog">Siguiente</string>
+    <string name="hint_codigo">Código</string>
+    <string name="hint_opcional">Opcional</string>
+    <string name="error_icono_descripcion">Icono de peligro</string>
 </resources>

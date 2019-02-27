@@ -13,9 +13,9 @@ import retrofit2.http.Path;
 
 public interface ApiService {
 
-//    String API_BASE_URL = "http://10.139.24.189:8089";
-//    String API_BASE_URL = "http://10.139.24.99:8089";
-    String API_BASE_URL = "http://10.0.2.2:8089";
+    //    String API_BASE_URL = "http://10.139.24.189:8089";
+    String API_BASE_URL = "http://10.139.24.130:8089";
+//    String API_BASE_URL = "http://10.0.2.2:8089";
 
     //10.0.2.2
 

@@ -9,6 +9,8 @@ public class Formulario {
     private String nombre_supervisor;
     private String fecha;
     private String turno;
+    private String error_id;
+    private String error_descripcion;
     private Integer cilindro_oil;
     private Integer cilindro_zona_1;
     private Integer cilindro_zona_2;
@@ -63,13 +65,15 @@ public class Formulario {
     public Formulario() {
     }
 
-    public Formulario(Long tubo_id, Integer numero_maquina, String nombre_maquinista, String nombre_supervisor, String fecha, String turno, Integer cilindro_oil, Integer cilindro_zona_1, Integer cilindro_zona_2, Integer cilindro_zona_3, Integer cilindro_zona_4, Integer cilindro_zona_5, Integer cilindro_zona_6, Integer cabezal_interna, Integer cabezal_zona_1, Integer cabezal_zona_2, Integer cabezal_zona_3, Integer cabezal_zona_4, Integer cabezal_zona_5, Integer cabezal_zona_6, Integer cabezal_zona_7, Integer cabezal_zona_8, Integer cabezal_zona_9, Integer cabezal_zona_10, Integer cabezal_zona_11, Integer cabezal_zona_12, Integer cabezal_zona_13, Integer cabezal_zona_14, Integer cabezal_zona_15, Integer cabezal_zona_16, Integer cabezal_zona_17, Integer cabezal_zona_18, String nombre_cabezal, Integer diametro_restrictor_filtro, Integer rpm_motorExtrusora, Integer amperaje_motorExtrusora, String rpm_revMin_tornillos, String porcentaje_velocidad_alimentador, String amperaje_motor_alimentador, String desgasificador_vacio, Integer presion_masa, Integer temperatura_masa, Integer contrapresion, String vacio_primera_tina, Integer temperatura_primera_tina_enfria, String presion_agua_primera_tina_enfria, String vacio_segunda_tina_enfria, String velocidad_halador, String limpieza_filtro_tina, String altura_rotulo, String espesor, Integer diametro_externo, Integer longitud_tubo, String embone, Integer kilogramos_horas, String peso_tubo_metro) {
+    public Formulario(Long tubo_id, Integer numero_maquina, String nombre_maquinista, String nombre_supervisor, String fecha, String turno, String error_id, String error_descripcion, Integer cilindro_oil, Integer cilindro_zona_1, Integer cilindro_zona_2, Integer cilindro_zona_3, Integer cilindro_zona_4, Integer cilindro_zona_5, Integer cilindro_zona_6, Integer cabezal_interna, Integer cabezal_zona_1, Integer cabezal_zona_2, Integer cabezal_zona_3, Integer cabezal_zona_4, Integer cabezal_zona_5, Integer cabezal_zona_6, Integer cabezal_zona_7, Integer cabezal_zona_8, Integer cabezal_zona_9, Integer cabezal_zona_10, Integer cabezal_zona_11, Integer cabezal_zona_12, Integer cabezal_zona_13, Integer cabezal_zona_14, Integer cabezal_zona_15, Integer cabezal_zona_16, Integer cabezal_zona_17, Integer cabezal_zona_18, String nombre_cabezal, Integer diametro_restrictor_filtro, Integer rpm_motorExtrusora, Integer amperaje_motorExtrusora, String rpm_revMin_tornillos, String porcentaje_velocidad_alimentador, String amperaje_motor_alimentador, String desgasificador_vacio, Integer presion_masa, Integer temperatura_masa, Integer contrapresion, String vacio_primera_tina, Integer temperatura_primera_tina_enfria, String presion_agua_primera_tina_enfria, String vacio_segunda_tina_enfria, String velocidad_halador, String limpieza_filtro_tina, String altura_rotulo, String espesor, Integer diametro_externo, Integer longitud_tubo, String embone, Integer kilogramos_horas, String peso_tubo_metro) {
         this.tubo_id = tubo_id;
         this.numero_maquina = numero_maquina;
         this.nombre_maquinista = nombre_maquinista;
         this.nombre_supervisor = nombre_supervisor;
         this.fecha = fecha;
         this.turno = turno;
+        this.error_id = error_id;
+        this.error_descripcion = error_descripcion;
         this.cilindro_oil = cilindro_oil;
         this.cilindro_zona_1 = cilindro_zona_1;
         this.cilindro_zona_2 = cilindro_zona_2;
@@ -176,6 +180,22 @@ public class Formulario {
 
     public void setTurno(String turno) {
         this.turno = turno;
+    }
+
+    public String getError_id() {
+        return error_id;
+    }
+
+    public void setError_id(String error_id) {
+        this.error_id = error_id;
+    }
+
+    public String getError_descripcion() {
+        return error_descripcion;
+    }
+
+    public void setError_descripcion(String error_descripcion) {
+        this.error_descripcion = error_descripcion;
     }
 
     public Integer getCilindro_oil() {
@@ -588,6 +608,8 @@ public class Formulario {
                 ", nombre_supervisor='" + nombre_supervisor + '\'' +
                 ", fecha='" + fecha + '\'' +
                 ", turno='" + turno + '\'' +
+                ", error_id='" + error_id + '\'' +
+                ", error_descripcion='" + error_descripcion + '\'' +
                 ", cilindro_oil=" + cilindro_oil +
                 ", cilindro_zona_1=" + cilindro_zona_1 +
                 ", cilindro_zona_2=" + cilindro_zona_2 +
